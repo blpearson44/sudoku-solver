@@ -49,12 +49,14 @@ def possible(row, col, digit):
 
 
 num_solutions = 0
+show_solutions = True
 
 
 def solve():
     """Solves the sudoku puzzle through backgtracking"""
     global puzzle
     global num_solutions
+    global show_solutions
     for row in range(9):
         for col in range(9):
             if puzzle[row][col] == 0:
@@ -68,14 +70,16 @@ def solve():
                         puzzle[row][col] = 0
                 return
     num_solutions += 1
-    print("Solution {}:".format(num_solutions))
-    print(np.matrix(puzzle))
-    input("More?")
+    if show_solutions:
+        print("Solution {}:".format(num_solutions))
+        print(np.matrix(puzzle))
+        response = str(input("More?\n"))
+        show_solutions = (response != "n")
 
 
 puzzle_key = str(input("Puzzle String:\n"))
 create_puzzle(puzzle_key)
 
-
+print("Input N to skip showing solutions.")
 solve()
 print("That puzzle had {} solution(s).".format(num_solutions))
