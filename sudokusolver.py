@@ -76,8 +76,13 @@ def solve():
         response = str(input("More?\n"))
         show_solutions = (response != "n")
 
+reply = input("Would you like to use a default key? (Y/N): ")
+if reply == "Y":
+    puzzle_key = "000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+else:
+    puzzle_key = str(input("Input puzzle key:\n"))
 
-puzzle_key = "000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+
 create_puzzle(puzzle_key)
 
 print("Input N to skip showing solutions.")
