@@ -77,7 +77,7 @@ def solve():
         show_solutions = (response != "n")
 
 
-puzzle_key = str(input("Puzzle String:\n"))
+puzzle_key = "000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 create_puzzle(puzzle_key)
 
 print("Input N to skip showing solutions.")
